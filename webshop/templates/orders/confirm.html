@@ -1,0 +1,59 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+        <div id="breadcrumb" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">Regular Page</h3>
+						<ul class="breadcrumb-tree">
+							<li><a href="/">Home</a></li>
+							<li class="active">Catalog</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="row text-center">
+					<!-- =========================================================== -->
+					<form action="/orders/confirm/{{init_list}}" method="post">
+                      {% csrf_token %}
+                      <p style="color: purple">
+                        <label>
+                          Введіть Ваш E-mail для зв'язку із службою доставки
+                        </label>
+                        <br>
+						  <input type="email" id="email" name="email" class="inp" required>
+						  <span id="email_err" class="error"></span>
+                      </p>
+						<p>
+							<input type="reset" id="reset" value="Повернутися" class="btn btn-danger my-btn">
+							<input type="submit" id="submit" value="Замовити" class="btn btn-success my-btn">
+						</p>
+
+                    </form>
+					<!-- =========================================================== -->
+				</div>
+			</div>
+		</div>
+<style>
+	.my-btn{
+		width: 150px;
+		margin-top: 15px;
+		margin-right: 5px;
+	}
+	.inp{
+		width: 40%;
+		padding: 5px;
+		text-align: center;
+		font: 13pt 'Trebuchet MS';
+		color: blue;
+	}
+	label{
+		font: italic 12pt 'Trebuchet MS';
+		margin-bottom: 5px;
+	}
+</style>
+{% endblock content %}

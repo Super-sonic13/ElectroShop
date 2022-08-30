@@ -1,0 +1,65 @@
+{%extends 'layouts/base.html'%}
+{% load static %}
+   {% block content %}
+
+<!--================login_part Area =================-->
+    <section class="login_part section_padding ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 col-md-10">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner">
+                            <h3>Доброго дня<br>
+                                Будь-ласка введіть дані для реєстрації</h3>
+                            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                {% csrf_token %}
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="login" name="login" value=""
+                                        placeholder="Логін" autocomplete="new-password">
+                                    <span id="login_err" class="error"></span>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="email" class="form-control" id="email" name="email" value=""
+                                        placeholder="Пошта" autocomplete="new-password">
+                                    <span id="email_err" class="error"></span>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="password1" name="password1" value=""
+                                        placeholder="Пароль" autocomplete="new-password">
+                                    <span id="pass1_err" class="error"></span>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="password2" name="password2" value=""
+                                        placeholder="Підтвердіть пароль" autocomplete="new-password">
+                                    <span id="pass2_err" class="error"></span>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <div class="creat_account d-flex align-items-center">
+                                        <input type="checkbox" id="f-option" name="selector">
+                                        <label for="f-option">Запам'ятати мене</label>
+                                    </div>
+                                    <button type="submit" value="submit" class="btn_3">
+                                        Зареєструватись
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================login_part end =================-->
+<style>
+    .error {
+    color: red;
+    font-style: italic;
+    font-size: 20px
+    }
+    .form-control {
+    font-size: 1.5rem;
+    }
+
+</style>
+
+{%endblock content%}

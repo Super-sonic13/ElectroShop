@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+        <div id="breadcrumb" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">Regular Page</h3>
+						<ul class="breadcrumb-tree">
+							<li><a href="/">Orders</a></li>
+							<li class="active">Thanks</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="row text-center">
+					<!-- =========================================================== -->
+					<h3 style="color: darckcyan">Дякуємо за замовлення!</h3>
+					<hr>
+                    <h4 style="color: gray">
+                        На вказану Вами при оформлені рахунку <br>
+                        E-mail адресу: <span>{{email}}</span>
+                        відправлено листа iз данними Вашого замовлення!
+                    </h4>
+                    <h4 style="color: darckcyan">
+                        Наш менеджер має надіслати Вам контактне повідомлення <br>
+                        протягом найближчих 30 хвилин.
+                    </h4>
+					<!-- =========================================================== -->
+				</div>
+			</div>
+		</div>
+{% endblock content %}
